@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transport Booking</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">TransportGo</div>
+        <div class="nav-links">
+            <button id="loginBtn" class="nav-btn">Login</button>
+            <button id="registerBtn" class="nav-btn">Register</button>
+            <button id="logoutBtn" class="nav-btn hidden">Logout</button>
+        </div>
+    </nav>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Login</h2>
+            <form id="loginForm">
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Password" required>
+                <button type="submit">Login</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Register Modal -->
+    <div id="registerModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Register</h2>
+            <form id="registerForm">
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Password" required>
+                <input type="password" placeholder="Confirm Password" required>
+                <button type="submit">Register</button>
+            </form>
+        </div>
+    </div>
+
+    <main class="container">
+        <section class="search-section">
+            <h2>Search Tickets</h2>
+            <div class="search-form">
+                <select id="transportType">
+                    <option value="">Select Transport Type</option>
+                    <option value="bus">Bus</option>
+                    <option value="car">Car</option>
+                    <option value="flight">Flight</option>
+                </select>
+                <input type="text" id="origin" placeholder="From">
+                <input type="text" id="destination" placeholder="To">
+                <input type="date" id="date">
+                <button id="searchBtn">Search</button>
+            </div>
+        </section>
+
+        <section class="results-section">
+            <div id="searchResults" class="results-grid"></div>
+        </section>
+
+        <!-- Booking Modal -->
+        <div id="bookingModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Confirm Booking</h2>
+                <div id="bookingDetails"></div>
+                <div class="passenger-details">
+                    <input type="text" id="passengerName" placeholder="Passenger Name">
+                    <input type="number" id="seatCount" min="1" max="5" value="1">
+                </div>
+                <button id="confirmBooking">Confirm Booking</button>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
